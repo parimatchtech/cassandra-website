@@ -123,6 +123,11 @@ extra-footer: '
 <li>Hudson Post build task</li>
 </ul>
 </div>
+<div class="section" id="configure-throttle-category">
+<h3>Configure Throttle Category<a class="headerlink" href="#configure-throttle-category" title="Permalink to this headline">¶</a></h3>
+<p>Builds that are not containerized (e.g. cqlshlib tests and in-jvm dtests) use local resources for Cassandra (ccm). To prevent these builds running concurrently the <code class="docutils literal notranslate"><span class="pre">Cassandra</span></code> throttle category needs to be created.</p>
+<p>This is done under <code class="docutils literal notranslate"><span class="pre">Manage</span> <span class="pre">Jenkins</span> <span class="pre">-&gt;</span> <span class="pre">System</span> <span class="pre">Configuration</span> <span class="pre">-&gt;</span> <span class="pre">Throttle</span> <span class="pre">Concurrent</span> <span class="pre">Builds</span></code>. Enter “Cassandra” for the <code class="docutils literal notranslate"><span class="pre">Category</span> <span class="pre">Name</span></code> and “1” for <code class="docutils literal notranslate"><span class="pre">Maximum</span> <span class="pre">Concurrent</span> <span class="pre">Builds</span> <span class="pre">Per</span> <span class="pre">Node</span></code>.</p>
+</div>
 <div class="section" id="setup-seed-job">
 <h3>Setup seed job<a class="headerlink" href="#setup-seed-job" title="Permalink to this headline">¶</a></h3>
 <p>Config <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Item</span></code></p>

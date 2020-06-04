@@ -113,7 +113,7 @@ It is anticipated that a future version will support monotonic reads with transi
 <p>The objective of transient replication is to decouple storage requirements from data redundancy (or consensus group size) using incremental repair, in order to reduce storage overhead.
 Certain nodes act as full replicas (storing all the data for a given token range), and some nodes act as transient replicas, storing only unrepaired data for the same token ranges.</p>
 <p>The optimization that is made possible with transient replication is called “Cheap quorums”, which implies that data redundancy is increased without corresponding increase in storage usage.</p>
-<p>Transient replication is useful when sufficient full replicas are unavailable to receive and store all the data.
+<p>Transient replication is useful when sufficient full replicas are available to receive and store all the data.
 Transient replication allows you to configure a subset of replicas to only replicate data that hasn’t been incrementally repaired.
 As an optimization, we can avoid writing data to a transient replica if we have successfully written data to the full replicas.</p>
 <p>After incremental repair, transient data stored on transient replicas can be discarded.</p>
@@ -127,7 +127,7 @@ As an optimization, we can avoid writing data to a transient replica if we have 
 <p>Transient replication may be configured with both <code class="docutils literal notranslate"><span class="pre">SimpleStrategy</span></code> and <code class="docutils literal notranslate"><span class="pre">NetworkTopologyStrategy</span></code>. Transient replication is configured by setting replication factor as <code class="docutils literal notranslate"><span class="pre">&lt;total_replicas&gt;/&lt;transient_replicas&gt;</span></code>.</p>
 <p>As an example, create a keyspace with replication factor (RF) 3.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">KEYSPACE</span> <span class="n">CassandraKeyspaceSimple</span> <span class="n">WITH</span> <span class="n">replication</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;SimpleStrategy&#39;</span><span class="p">,</span>
-<span class="s1">&#39;replication_factor&#39;</span> <span class="p">:</span> <span class="mi">4</span><span class="o">/</span><span class="mi">1</span><span class="p">};</span>
+<span class="s1">&#39;replication_factor&#39;</span> <span class="p">:</span> <span class="mi">3</span><span class="o">/</span><span class="mi">1</span><span class="p">};</span>
 </pre></div>
 </div>
 <p>As another example, <code class="docutils literal notranslate"><span class="pre">some_keysopace</span> <span class="pre">keyspace</span></code> will have 3 replicas in DC1, 1 of which is transient, and 5 replicas in DC2, 2 of which are transient:</p>

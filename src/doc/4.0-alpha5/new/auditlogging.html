@@ -201,13 +201,30 @@ The settings may be same/different on each node.</p>
 <div class="section" id="setting-the-logger">
 <h3>Setting the Logger<a class="headerlink" href="#setting-the-logger" title="Permalink to this headline">¶</a></h3>
 <p>The audit logger is set with the <code class="docutils literal notranslate"><span class="pre">logger</span></code> option.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">logger</span><span class="p">:</span> <span class="n">BinAuditLogger</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">logger</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">class_name</span><span class="p">:</span> <span class="n">BinAuditLogger</span>
 </pre></div>
 </div>
 <p>Two types of audit loggers are supported: <code class="docutils literal notranslate"><span class="pre">FileAuditLogger</span></code> and <code class="docutils literal notranslate"><span class="pre">BinAuditLogger</span></code>.
 <code class="docutils literal notranslate"><span class="pre">BinAuditLogger</span></code> is the default setting.  The <code class="docutils literal notranslate"><span class="pre">BinAuditLogger</span></code> is an efficient way to log events to file in a binary format.</p>
 <p><code class="docutils literal notranslate"><span class="pre">FileAuditLogger</span></code> is synchronous, file-based audit logger; just uses the standard logging mechanism. <code class="docutils literal notranslate"><span class="pre">FileAuditLogger</span></code> logs events to <code class="docutils literal notranslate"><span class="pre">audit/audit.log</span></code> file using <code class="docutils literal notranslate"><span class="pre">slf4j</span></code> logger.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">NoOpAuditLogger</span></code> is a No-Op implementation of the audit logger to be used as a default audit logger when audit logging is disabled.</p>
+<p>It is possible to configure your custom logger implementation by injecting a map of property keys and their respective values. Default <cite>IAuditLogger</cite>
+implementations shipped with Cassandra do not react on these properties but your custom logger might. They would be present as
+a parameter of logger constructor (as <cite>Map&lt;String, String&gt;</cite>). In <code class="docutils literal notranslate"><span class="pre">cassandra.yaml</span></code> file, you may configure it like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">logger</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">class_name</span><span class="p">:</span> <span class="n">MyCustomAuditLogger</span>
+  <span class="n">parameters</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">key1</span><span class="p">:</span> <span class="n">value1</span>
+    <span class="n">key2</span><span class="p">:</span> <span class="n">value2</span>
+</pre></div>
+</div>
+<p>When it comes to configuring these parameters, you can use respective <code class="docutils literal notranslate"><span class="pre">enableAuditLog</span></code> method in <code class="docutils literal notranslate"><span class="pre">StorageServiceMBean</span></code>.
+There are two methods of same name with different signatures. The first one does not accept a map where your parameters would be. This method
+is used primarily e.g. from JConsole or similar tooling. JConsole can not accept a map to be sent over JMX so in order to be able to enable it
+from there, even without any parameters, use this method. <code class="docutils literal notranslate"><span class="pre">BinAuditLogger</span></code> does not need any parameters to run with so invoking this method is fine.
+The second one does accept a map with your custom parameters so you can pass them programmatically. <code class="docutils literal notranslate"><span class="pre">enableauditlog</span></code> command of <code class="docutils literal notranslate"><span class="pre">nodetool</span></code> uses
+the first <code class="docutils literal notranslate"><span class="pre">enableAuditLog</span></code> method mentioned. Hence, currently, there is not a way how to pass parameters to your custom audit logger from <code class="docutils literal notranslate"><span class="pre">nodetool</span></code>.</p>
 </div>
 <div class="section" id="setting-the-audit-logs-directory">
 <h3>Setting the Audit Logs Directory<a class="headerlink" href="#setting-the-audit-logs-directory" title="Permalink to this headline">¶</a></h3>
@@ -442,7 +459,8 @@ not set the value from cassandra.yaml will be used</td></tr>
 <p>To demonstrate audit logging enable and configure audit logs with following settings.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">audit_logging_options</span><span class="p">:</span>
    <span class="n">enabled</span><span class="p">:</span> <span class="n">true</span>
-   <span class="n">logger</span><span class="p">:</span> <span class="n">BinAuditLogger</span>
+   <span class="n">logger</span><span class="p">:</span>
+   <span class="o">-</span> <span class="n">class_name</span><span class="p">:</span> <span class="n">BinAuditLogger</span>
    <span class="n">audit_logs_dir</span><span class="p">:</span> <span class="s2">&quot;/cassandra/audit/logs/hourly&quot;</span>
    <span class="c1"># included_keyspaces:</span>
    <span class="c1"># excluded_keyspaces: system, system_schema, system_virtual_schema</span>

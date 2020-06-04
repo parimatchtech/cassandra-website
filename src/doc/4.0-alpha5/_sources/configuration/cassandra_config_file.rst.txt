@@ -24,8 +24,6 @@ and will use the initial_token as described below.
 Specifying initial_token will override this setting on the node's initial start,
 on subsequent starts, this setting will apply even if initial token is set.
 
-If you already have a cluster with 1 token per node, and wish to migrate to 
-multiple tokens per node, see http://wiki.apache.org/cassandra/Operations
 
 *Default Value:* 256
 
@@ -68,7 +66,6 @@ that do not have vnodes enabled.
 ``hinted_handoff_enabled``
 --------------------------
 
-See http://wiki.apache.org/cassandra/HintedHandoff
 May either be "true" or "false" to enable globally
 
 *Default Value:* true

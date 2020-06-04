@@ -6,14 +6,9 @@ title: "Documentation"
 is_homepage: false
 is_sphinx_doc: true
 
-doc-parent: "Configuring Cassandra"
-
 doc-title: "Cassandra Configuration File"
 doc-header-links: '
   <link rel="top" title="Apache Cassandra Documentation v4.0-alpha5" href="../index.html"/>
-      <link rel="up" title="Configuring Cassandra" href="index.html"/>
-      <link rel="next" title="Operating Cassandra" href="../operating/index.html"/>
-      <link rel="prev" title="Configuring Cassandra" href="index.html"/>
 '
 doc-search-path: "../search.html"
 
@@ -55,191 +50,13 @@ extra-footer: '
             
             
             
-            <ul class="current">
+            <ul>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../new/index.html">New Features in Apache Cassandra 4.0</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../architecture/index.html">Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cql/index.html">The Cassandra Query Language (CQL)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../data_modeling/index.html">Data Modeling</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Configuring Cassandra</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Cassandra Configuration File</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#cluster-name"><code class="docutils literal notranslate"><span class="pre">cluster_name</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#num-tokens"><code class="docutils literal notranslate"><span class="pre">num_tokens</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#allocate-tokens-for-keyspace"><code class="docutils literal notranslate"><span class="pre">allocate_tokens_for_keyspace</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#allocate-tokens-for-local-replication-factor"><code class="docutils literal notranslate"><span class="pre">allocate_tokens_for_local_replication_factor</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#initial-token"><code class="docutils literal notranslate"><span class="pre">initial_token</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#hinted-handoff-enabled"><code class="docutils literal notranslate"><span class="pre">hinted_handoff_enabled</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#hinted-handoff-disabled-datacenters"><code class="docutils literal notranslate"><span class="pre">hinted_handoff_disabled_datacenters</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#max-hint-window-in-ms"><code class="docutils literal notranslate"><span class="pre">max_hint_window_in_ms</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#hinted-handoff-throttle-in-kb"><code class="docutils literal notranslate"><span class="pre">hinted_handoff_throttle_in_kb</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#max-hints-delivery-threads"><code class="docutils literal notranslate"><span class="pre">max_hints_delivery_threads</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#hints-directory"><code class="docutils literal notranslate"><span class="pre">hints_directory</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#hints-flush-period-in-ms"><code class="docutils literal notranslate"><span class="pre">hints_flush_period_in_ms</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#max-hints-file-size-in-mb"><code class="docutils literal notranslate"><span class="pre">max_hints_file_size_in_mb</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#hints-compression"><code class="docutils literal notranslate"><span class="pre">hints_compression</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#batchlog-replay-throttle-in-kb"><code class="docutils literal notranslate"><span class="pre">batchlog_replay_throttle_in_kb</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#authenticator"><code class="docutils literal notranslate"><span class="pre">authenticator</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#authorizer"><code class="docutils literal notranslate"><span class="pre">authorizer</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#role-manager"><code class="docutils literal notranslate"><span class="pre">role_manager</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#network-authorizer"><code class="docutils literal notranslate"><span class="pre">network_authorizer</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#roles-validity-in-ms"><code class="docutils literal notranslate"><span class="pre">roles_validity_in_ms</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#roles-update-interval-in-ms"><code class="docutils literal notranslate"><span class="pre">roles_update_interval_in_ms</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#permissions-validity-in-ms"><code class="docutils literal notranslate"><span class="pre">permissions_validity_in_ms</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#permissions-update-interval-in-ms"><code class="docutils literal notranslate"><span class="pre">permissions_update_interval_in_ms</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#credentials-validity-in-ms"><code class="docutils literal notranslate"><span class="pre">credentials_validity_in_ms</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#credentials-update-interval-in-ms"><code class="docutils literal notranslate"><span class="pre">credentials_update_interval_in_ms</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#partitioner"><code class="docutils literal notranslate"><span class="pre">partitioner</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#data-file-directories"><code class="docutils literal notranslate"><span class="pre">data_file_directories</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#commitlog-directory"><code class="docutils literal notranslate"><span class="pre">commitlog_directory</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cdc-enabled"><code class="docutils literal notranslate"><span class="pre">cdc_enabled</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cdc-raw-directory"><code class="docutils literal notranslate"><span class="pre">cdc_raw_directory</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#disk-failure-policy"><code class="docutils literal notranslate"><span class="pre">disk_failure_policy</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#commit-failure-policy"><code class="docutils literal notranslate"><span class="pre">commit_failure_policy</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#prepared-statements-cache-size-mb"><code class="docutils literal notranslate"><span class="pre">prepared_statements_cache_size_mb</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#key-cache-size-in-mb"><code class="docutils literal notranslate"><span class="pre">key_cache_size_in_mb</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#key-cache-save-period"><code class="docutils literal notranslate"><span class="pre">key_cache_save_period</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#key-cache-keys-to-save"><code class="docutils literal notranslate"><span class="pre">key_cache_keys_to_save</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#row-cache-class-name"><code class="docutils literal notranslate"><span class="pre">row_cache_class_name</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#row-cache-size-in-mb"><code class="docutils literal notranslate"><span class="pre">row_cache_size_in_mb</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#row-cache-save-period"><code class="docutils literal notranslate"><span class="pre">row_cache_save_period</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#row-cache-keys-to-save"><code class="docutils literal notranslate"><span class="pre">row_cache_keys_to_save</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#counter-cache-size-in-mb"><code class="docutils literal notranslate"><span class="pre">counter_cache_size_in_mb</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#counter-cache-save-period"><code class="docutils literal notranslate"><span class="pre">counter_cache_save_period</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#counter-cache-keys-to-save"><code class="docutils literal notranslate"><span class="pre">counter_cache_keys_to_save</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#saved-caches-directory"><code class="docutils literal notranslate"><span class="pre">saved_caches_directory</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#commitlog-sync-batch-window-in-ms"><code class="docutils literal notranslate"><span class="pre">commitlog_sync_batch_window_in_ms</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#commitlog-sync-group-window-in-ms"><code class="docutils literal notranslate"><span class="pre">commitlog_sync_group_window_in_ms</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#commitlog-sync"><code class="docutils literal notranslate"><span class="pre">commitlog_sync</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#commitlog-sync-period-in-ms"><code class="docutils literal notranslate"><span class="pre">commitlog_sync_period_in_ms</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#periodic-commitlog-sync-lag-block-in-ms"><code class="docutils literal notranslate"><span class="pre">periodic_commitlog_sync_lag_block_in_ms</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#commitlog-segment-size-in-mb"><code class="docutils literal notranslate"><span class="pre">commitlog_segment_size_in_mb</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#commitlog-compression"><code class="docutils literal notranslate"><span class="pre">commitlog_compression</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#table"><code class="docutils literal notranslate"><span class="pre">table</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#flush-compression"><code class="docutils literal notranslate"><span class="pre">flush_compression</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#seed-provider"><code class="docutils literal notranslate"><span class="pre">seed_provider</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#concurrent-reads"><code class="docutils literal notranslate"><span class="pre">concurrent_reads</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#concurrent-writes"><code class="docutils literal notranslate"><span class="pre">concurrent_writes</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#concurrent-counter-writes"><code class="docutils literal notranslate"><span class="pre">concurrent_counter_writes</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#concurrent-materialized-view-writes"><code class="docutils literal notranslate"><span class="pre">concurrent_materialized_view_writes</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#file-cache-size-in-mb"><code class="docutils literal notranslate"><span class="pre">file_cache_size_in_mb</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#buffer-pool-use-heap-if-exhausted"><code class="docutils literal notranslate"><span class="pre">buffer_pool_use_heap_if_exhausted</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#disk-optimization-strategy"><code class="docutils literal notranslate"><span class="pre">disk_optimization_strategy</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#memtable-heap-space-in-mb"><code class="docutils literal notranslate"><span class="pre">memtable_heap_space_in_mb</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#memtable-offheap-space-in-mb"><code class="docutils literal notranslate"><span class="pre">memtable_offheap_space_in_mb</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#memtable-cleanup-threshold"><code class="docutils literal notranslate"><span class="pre">memtable_cleanup_threshold</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#memtable-allocation-type"><code class="docutils literal notranslate"><span class="pre">memtable_allocation_type</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#repair-session-space-in-mb"><code class="docutils literal notranslate"><span class="pre">repair_session_space_in_mb</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#commitlog-total-space-in-mb"><code class="docutils literal notranslate"><span class="pre">commitlog_total_space_in_mb</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#memtable-flush-writers"><code class="docutils literal notranslate"><span class="pre">memtable_flush_writers</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cdc-total-space-in-mb"><code class="docutils literal notranslate"><span class="pre">cdc_total_space_in_mb</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cdc-free-space-check-interval-ms"><code class="docutils literal notranslate"><span class="pre">cdc_free_space_check_interval_ms</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#index-summary-capacity-in-mb"><code class="docutils literal notranslate"><span class="pre">index_summary_capacity_in_mb</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#index-summary-resize-interval-in-minutes"><code class="docutils literal notranslate"><span class="pre">index_summary_resize_interval_in_minutes</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#trickle-fsync"><code class="docutils literal notranslate"><span class="pre">trickle_fsync</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#trickle-fsync-interval-in-kb"><code class="docutils literal notranslate"><span class="pre">trickle_fsync_interval_in_kb</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#storage-port"><code class="docutils literal notranslate"><span class="pre">storage_port</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ssl-storage-port"><code class="docutils literal notranslate"><span class="pre">ssl_storage_port</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#listen-address"><code class="docutils literal notranslate"><span class="pre">listen_address</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#listen-interface"><code class="docutils literal notranslate"><span class="pre">listen_interface</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#listen-interface-prefer-ipv6"><code class="docutils literal notranslate"><span class="pre">listen_interface_prefer_ipv6</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#broadcast-address"><code class="docutils literal notranslate"><span class="pre">broadcast_address</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#listen-on-broadcast-address"><code class="docutils literal notranslate"><span class="pre">listen_on_broadcast_address</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#internode-authenticator"><code class="docutils literal notranslate"><span class="pre">internode_authenticator</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#start-native-transport"><code class="docutils literal notranslate"><span class="pre">start_native_transport</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#native-transport-port"><code class="docutils literal notranslate"><span class="pre">native_transport_port</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#native-transport-port-ssl"><code class="docutils literal notranslate"><span class="pre">native_transport_port_ssl</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#native-transport-max-threads"><code class="docutils literal notranslate"><span class="pre">native_transport_max_threads</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#native-transport-max-frame-size-in-mb"><code class="docutils literal notranslate"><span class="pre">native_transport_max_frame_size_in_mb</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#native-transport-frame-block-size-in-kb"><code class="docutils literal notranslate"><span class="pre">native_transport_frame_block_size_in_kb</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#native-transport-max-concurrent-connections"><code class="docutils literal notranslate"><span class="pre">native_transport_max_concurrent_connections</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#native-transport-max-concurrent-connections-per-ip"><code class="docutils literal notranslate"><span class="pre">native_transport_max_concurrent_connections_per_ip</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#native-transport-allow-older-protocols"><code class="docutils literal notranslate"><span class="pre">native_transport_allow_older_protocols</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#native-transport-idle-timeout-in-ms"><code class="docutils literal notranslate"><span class="pre">native_transport_idle_timeout_in_ms</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#rpc-address"><code class="docutils literal notranslate"><span class="pre">rpc_address</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#rpc-interface"><code class="docutils literal notranslate"><span class="pre">rpc_interface</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#rpc-interface-prefer-ipv6"><code class="docutils literal notranslate"><span class="pre">rpc_interface_prefer_ipv6</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#broadcast-rpc-address"><code class="docutils literal notranslate"><span class="pre">broadcast_rpc_address</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#rpc-keepalive"><code class="docutils literal notranslate"><span class="pre">rpc_keepalive</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#internode-send-buff-size-in-bytes"><code class="docutils literal notranslate"><span class="pre">internode_send_buff_size_in_bytes</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#internode-recv-buff-size-in-bytes"><code class="docutils literal notranslate"><span class="pre">internode_recv_buff_size_in_bytes</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#incremental-backups"><code class="docutils literal notranslate"><span class="pre">incremental_backups</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#snapshot-before-compaction"><code class="docutils literal notranslate"><span class="pre">snapshot_before_compaction</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#auto-snapshot"><code class="docutils literal notranslate"><span class="pre">auto_snapshot</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#column-index-size-in-kb"><code class="docutils literal notranslate"><span class="pre">column_index_size_in_kb</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#column-index-cache-size-in-kb"><code class="docutils literal notranslate"><span class="pre">column_index_cache_size_in_kb</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#concurrent-compactors"><code class="docutils literal notranslate"><span class="pre">concurrent_compactors</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#concurrent-validations"><code class="docutils literal notranslate"><span class="pre">concurrent_validations</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#concurrent-materialized-view-builders"><code class="docutils literal notranslate"><span class="pre">concurrent_materialized_view_builders</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#compaction-throughput-mb-per-sec"><code class="docutils literal notranslate"><span class="pre">compaction_throughput_mb_per_sec</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sstable-preemptive-open-interval-in-mb"><code class="docutils literal notranslate"><span class="pre">sstable_preemptive_open_interval_in_mb</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#stream-entire-sstables"><code class="docutils literal notranslate"><span class="pre">stream_entire_sstables</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#stream-throughput-outbound-megabits-per-sec"><code class="docutils literal notranslate"><span class="pre">stream_throughput_outbound_megabits_per_sec</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#inter-dc-stream-throughput-outbound-megabits-per-sec"><code class="docutils literal notranslate"><span class="pre">inter_dc_stream_throughput_outbound_megabits_per_sec</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#read-request-timeout-in-ms"><code class="docutils literal notranslate"><span class="pre">read_request_timeout_in_ms</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#range-request-timeout-in-ms"><code class="docutils literal notranslate"><span class="pre">range_request_timeout_in_ms</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#write-request-timeout-in-ms"><code class="docutils literal notranslate"><span class="pre">write_request_timeout_in_ms</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#counter-write-request-timeout-in-ms"><code class="docutils literal notranslate"><span class="pre">counter_write_request_timeout_in_ms</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cas-contention-timeout-in-ms"><code class="docutils literal notranslate"><span class="pre">cas_contention_timeout_in_ms</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#truncate-request-timeout-in-ms"><code class="docutils literal notranslate"><span class="pre">truncate_request_timeout_in_ms</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#request-timeout-in-ms"><code class="docutils literal notranslate"><span class="pre">request_timeout_in_ms</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#internode-application-send-queue-capacity-in-bytes"><code class="docutils literal notranslate"><span class="pre">internode_application_send_queue_capacity_in_bytes</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#internode-application-send-queue-reserve-endpoint-capacity-in-bytes"><code class="docutils literal notranslate"><span class="pre">internode_application_send_queue_reserve_endpoint_capacity_in_bytes</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#internode-application-send-queue-reserve-global-capacity-in-bytes"><code class="docutils literal notranslate"><span class="pre">internode_application_send_queue_reserve_global_capacity_in_bytes</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#internode-application-receive-queue-capacity-in-bytes"><code class="docutils literal notranslate"><span class="pre">internode_application_receive_queue_capacity_in_bytes</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#internode-application-receive-queue-reserve-endpoint-capacity-in-bytes"><code class="docutils literal notranslate"><span class="pre">internode_application_receive_queue_reserve_endpoint_capacity_in_bytes</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#internode-application-receive-queue-reserve-global-capacity-in-bytes"><code class="docutils literal notranslate"><span class="pre">internode_application_receive_queue_reserve_global_capacity_in_bytes</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#slow-query-log-timeout-in-ms"><code class="docutils literal notranslate"><span class="pre">slow_query_log_timeout_in_ms</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cross-node-timeout"><code class="docutils literal notranslate"><span class="pre">cross_node_timeout</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#streaming-keep-alive-period-in-secs"><code class="docutils literal notranslate"><span class="pre">streaming_keep_alive_period_in_secs</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#streaming-connections-per-host"><code class="docutils literal notranslate"><span class="pre">streaming_connections_per_host</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#phi-convict-threshold"><code class="docutils literal notranslate"><span class="pre">phi_convict_threshold</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#endpoint-snitch"><code class="docutils literal notranslate"><span class="pre">endpoint_snitch</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#dynamic-snitch-update-interval-in-ms"><code class="docutils literal notranslate"><span class="pre">dynamic_snitch_update_interval_in_ms</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#dynamic-snitch-reset-interval-in-ms"><code class="docutils literal notranslate"><span class="pre">dynamic_snitch_reset_interval_in_ms</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#dynamic-snitch-badness-threshold"><code class="docutils literal notranslate"><span class="pre">dynamic_snitch_badness_threshold</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#server-encryption-options"><code class="docutils literal notranslate"><span class="pre">server_encryption_options</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#client-encryption-options"><code class="docutils literal notranslate"><span class="pre">client_encryption_options</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#internode-compression"><code class="docutils literal notranslate"><span class="pre">internode_compression</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#inter-dc-tcp-nodelay"><code class="docutils literal notranslate"><span class="pre">inter_dc_tcp_nodelay</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#tracetype-query-ttl"><code class="docutils literal notranslate"><span class="pre">tracetype_query_ttl</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#tracetype-repair-ttl"><code class="docutils literal notranslate"><span class="pre">tracetype_repair_ttl</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#enable-user-defined-functions"><code class="docutils literal notranslate"><span class="pre">enable_user_defined_functions</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#enable-scripted-user-defined-functions"><code class="docutils literal notranslate"><span class="pre">enable_scripted_user_defined_functions</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#windows-timer-interval"><code class="docutils literal notranslate"><span class="pre">windows_timer_interval</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#transparent-data-encryption-options"><code class="docutils literal notranslate"><span class="pre">transparent_data_encryption_options</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#tombstone-warn-threshold"><code class="docutils literal notranslate"><span class="pre">tombstone_warn_threshold</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#tombstone-failure-threshold"><code class="docutils literal notranslate"><span class="pre">tombstone_failure_threshold</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#batch-size-warn-threshold-in-kb"><code class="docutils literal notranslate"><span class="pre">batch_size_warn_threshold_in_kb</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#batch-size-fail-threshold-in-kb"><code class="docutils literal notranslate"><span class="pre">batch_size_fail_threshold_in_kb</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#unlogged-batch-across-partitions-warn-threshold"><code class="docutils literal notranslate"><span class="pre">unlogged_batch_across_partitions_warn_threshold</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#compaction-large-partition-warning-threshold-mb"><code class="docutils literal notranslate"><span class="pre">compaction_large_partition_warning_threshold_mb</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gc-log-threshold-in-ms"><code class="docutils literal notranslate"><span class="pre">gc_log_threshold_in_ms</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gc-warn-threshold-in-ms"><code class="docutils literal notranslate"><span class="pre">gc_warn_threshold_in_ms</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#max-value-size-in-mb"><code class="docutils literal notranslate"><span class="pre">max_value_size_in_mb</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#back-pressure-enabled"><code class="docutils literal notranslate"><span class="pre">back_pressure_enabled</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#back-pressure-strategy"><code class="docutils literal notranslate"><span class="pre">back_pressure_strategy</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#otc-coalescing-strategy"><code class="docutils literal notranslate"><span class="pre">otc_coalescing_strategy</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#otc-coalescing-window-us"><code class="docutils literal notranslate"><span class="pre">otc_coalescing_window_us</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#otc-coalescing-enough-coalesced-messages"><code class="docutils literal notranslate"><span class="pre">otc_coalescing_enough_coalesced_messages</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#otc-backlog-expiration-interval-ms"><code class="docutils literal notranslate"><span class="pre">otc_backlog_expiration_interval_ms</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ideal-consistency-level"><code class="docutils literal notranslate"><span class="pre">ideal_consistency_level</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#automatic-sstable-upgrade"><code class="docutils literal notranslate"><span class="pre">automatic_sstable_upgrade</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#max-concurrent-automatic-sstable-upgrades"><code class="docutils literal notranslate"><span class="pre">max_concurrent_automatic_sstable_upgrades</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#audit-logging-options"><code class="docutils literal notranslate"><span class="pre">audit_logging_options</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#full-query-logging-options"><code class="docutils literal notranslate"><span class="pre">full_query_logging_options</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#corrupted-tombstone-strategy"><code class="docutils literal notranslate"><span class="pre">corrupted_tombstone_strategy</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#diagnostic-events-enabled"><code class="docutils literal notranslate"><span class="pre">diagnostic_events_enabled</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#native-transport-flush-in-batches-legacy"><code class="docutils literal notranslate"><span class="pre">native_transport_flush_in_batches_legacy</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#repaired-data-tracking-for-range-reads-enabled"><code class="docutils literal notranslate"><span class="pre">repaired_data_tracking_for_range_reads_enabled</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#repaired-data-tracking-for-partition-reads-enabled"><code class="docutils literal notranslate"><span class="pre">repaired_data_tracking_for_partition_reads_enabled</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#report-unconfirmed-repaired-data-mismatches"><code class="docutils literal notranslate"><span class="pre">report_unconfirmed_repaired_data_mismatches</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#enable-materialized-views"><code class="docutils literal notranslate"><span class="pre">enable_materialized_views</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#enable-sasi-indexes"><code class="docutils literal notranslate"><span class="pre">enable_sasi_indexes</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#enable-transient-replication"><code class="docutils literal notranslate"><span class="pre">enable_transient_replication</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Configuring Cassandra</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../operating/index.html">Operating Cassandra</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Cassandra Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../troubleshooting/index.html">Troubleshooting</a></li>
@@ -278,8 +95,6 @@ of tokens assuming they have equal hardware capability.</p>
 and will use the initial_token as described below.</p>
 <p>Specifying initial_token will override this setting on the node’s initial start,
 on subsequent starts, this setting will apply even if initial token is set.</p>
-<p>If you already have a cluster with 1 token per node, and wish to migrate to
-multiple tokens per node, see <a class="reference external" href="http://wiki.apache.org/cassandra/Operations">http://wiki.apache.org/cassandra/Operations</a></p>
 <p><em>Default Value:</em> 256</p>
 </div>
 <div class="section" id="allocate-tokens-for-keyspace">
@@ -312,8 +127,7 @@ that do not have vnodes enabled.</p>
 </div>
 <div class="section" id="hinted-handoff-enabled">
 <h2><code class="docutils literal notranslate"><span class="pre">hinted_handoff_enabled</span></code><a class="headerlink" href="#hinted-handoff-enabled" title="Permalink to this headline">¶</a></h2>
-<p>See <a class="reference external" href="http://wiki.apache.org/cassandra/HintedHandoff">http://wiki.apache.org/cassandra/HintedHandoff</a>
-May either be “true” or “false” to enable globally</p>
+<p>May either be “true” or “false” to enable globally</p>
 <p><em>Default Value:</em> true</p>
 </div>
 <div class="section" id="hinted-handoff-disabled-datacenters">
@@ -1957,15 +1771,6 @@ Transient replication is experimental and is not recommended for production use.
 
 
 
-          
-          <div class="doc-prev-next-links" role="navigation" aria-label="footer navigation">
-            
-            <a href="../operating/index.html" class="btn btn-default pull-right " role="button" title="Operating Cassandra" accesskey="n">Next <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span></a>
-            
-            
-            <a href="index.html" class="btn btn-default" role="button" title="Configuring Cassandra" accesskey="p"><span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span> Previous</a>
-            
-          </div>
           
         </div>
       </div>

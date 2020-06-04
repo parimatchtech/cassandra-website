@@ -7,10 +7,9 @@ Usage
 ---------
 
 usage: nodetool [(-u <username> | --username <username>)]
-        [(-h <host> | --host <host>)] [(-p <port> | --port <port>)]
-        [(-pw <password> | --password <password>)]
+        [(-p <port> | --port <port>)] [(-pw <password> | --password <password>)]
         [(-pwf <passwordFilePath> | --password-file <passwordFilePath>)]
-        [(-pp | --print-port)] <command> [<args>]
+        [(-pp | --print-port)] [(-h <host> | --host <host>)] <command> [<args>]
 
 The most commonly used nodetool commands are:
 
@@ -102,8 +101,6 @@ The most commonly used nodetool commands are:
 
     :doc:`getmaxhintwindow` -              Print the max hint window in ms
 
-    :doc:`getreplicas` -                   Print replicas for a given key
-
     :doc:`getseeds` -                      Get the currently in use seed node IP list excluding the node IP
 
     :doc:`getsstables` -                   Print the sstable filenames that own the key
@@ -115,8 +112,6 @@ The most commonly used nodetool commands are:
     :doc:`gettraceprobability` -           Print the current trace probability value
 
     :doc:`gossipinfo` -                    Shows the gossip information for the cluster
-
-    :doc:`handoffwindow` -                 Print current hinted handoff window
 
     :doc:`help` -                          Display help information
 
